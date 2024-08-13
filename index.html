@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Karimullah Syed | Portfolio</title>
+    <link rel="icon" href="favicon.ico" type="image/x-icon"> <!-- Favicon -->
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+        }
+
+        /* Header */
+        header {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo-img {
+            height: 50px; /* Adjust the size as needed */
+            margin-right: 10px;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .btn-download {
+            background-color: #f80;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-left: 20px;
+        }
+
+        .btn-download:hover {
+            background-color: #e66900;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-image: url('hero-background.png');
+            background-size: cover;
+            background-position: center;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero-content {
+            max-width: 600px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            background-color: #f80;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .btn:hover {
+            background-color: #e66900;
+        }
+
+       /* About Section */
+        .about {
+         position: relative;
+         padding: 80px 20px;
+         background-color: #f4f4f4;
+         text-align: center;
+        }
+
+        .about-image {
+           position: relative;
+           display: flex;
+           flex-direction: column;
+           align-items: center;
+        }
+
+.about-image img {
+    width: 100%;
+    max-width: 600px; /* Restrict image width for better responsiveness */
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.about-content {
+    color: rgb(53, 148, 127);
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Optional: for better readability */
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.about h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.about p {
+    font-size: 1rem;
+}
+
+/* Responsive Styles for About Section */
+@media (max-width: 768px) {
+    .about h2 {
+        font-size: 1.5rem;
+    }
+
+    .about p {
+        font-size: 0.9rem;
+    }
+
+    .about-image img {
+        max-width: 90%;
+    }
+}
+
+@media (max-width: 480px) {
+    .about h2 {
+        font-size: 1.2rem;
+    }
+
+    .about p {
+        font-size: 0.8rem;
+    }
+
+    .about-image img {
+        max-width: 100%;
+    }
+}
+
+
+        /* Projects Section */
+        .projects {
+            padding: 80px 20px;
+            background-color: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .projects h2 {
+            font-size: 2rem;
+            margin-bottom: 40px;
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .project-item {
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .project-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .project-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .project-item h4 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .project-item p {
+            font-size: 0.9rem;
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 80px 20px;
+            background-color: #f4f4f4;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        .contact-container {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .contact-form button {
+            background-color: #f80;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            border: none;
+            font-size: 1rem;
+            cursor: pointer;
+        }
+
+        .contact-form button:hover {
+            background-color: #e66900;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .footer-logo {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: white;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        .footer-social a {
+            color: white;
+            margin: 0 10px;
+            font-size: 20px;
+        }
+
+        .footer-text {
+            font-size: 0.8rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+
+            .hero p {
+                font-size: 1.2rem;
+            }
+
+            .btn {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .about h2 {
+                font-size: 1.5rem;
+            }
+
+            .about p {
+                font-size: 0.9rem;
+            }
+
+            .projects h2 {
+                font-size: 1.5rem;
+            }
+
+            .project-item h3 {
+                font-size: 1.2rem;
+            }
+
+            .project-item h4 {
+                font-size: 1rem;
+            }
+
+            .project-item p {
+                font-size: 0.8rem;
+            }
+
+            .contact-form button {
+                font-size: 0.9rem;
+                padding: 8px 16px;
+            }
+
+            .footer-text {
+                font-size: 0.7rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            nav ul {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            nav ul li {
+                margin-left: 0;
+                margin-bottom: 10px;
+            }
+
+            .hero h1 {
+                font-size: 1.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .about h2 {
+                font-size: 1.2rem;
+            }
+
+            .about p {
+                font-size: 0.8rem;
+            }
+
+            .projects h2 {
+                font-size: 1.2rem;
+            }
+
+            .project-item h3 {
+                font-size: 1rem;
+            }
+
+            .project-item h4 {
+                font-size: 0.9rem;
+            }
+
+            .project-item p {
+                font-size: 0.7rem;
+            }
+
+            .contact-form button {
+                font-size: 0.8rem;
+                padding: 6px 12px;
+            }
+
+            .footer-text {
+                font-size: 0.6rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Section -->
+    <header>
+        <div class="logo">
+            <img src="logo.png" alt="Logo" class="logo-img">
+            Karimullah Syed
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="hero-content">
+            <h1>Welcome to My Portfolio</h1>
+            <p>I'm Karimullah Syed, a Full Stack Java Developer</p>
+            <a href="karimullah_syed_resume.pdf" class="btn-download" download>Download CV</a>
+            <a href="#projects" class="btn">View My Work</a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about" id="about">
+        <div class="about-image">
+            <!--<img src="your-image.png" alt="Your Image">-->
+            <div class="about-content">
+                <h2>About Me</h2>
+                <p>I am a passionate and dedicated Full Stack Java Developer with a strong foundation in both front-end and back-end technologies. As a recent Post-graduate with a degree in Master of Computer Applications, I have gained hands-on experience in building dynamic and responsive web applications using Java, Spring Boot, and Hibernate on the back-end, and HTML, CSS, JavaScript, and React on the front-end.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section class="projects" id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <!-- Project 1 -->
+            <div class="project-item">
+                <img src="project1.png" alt="Project 1">
+                <h3>SCHOOL WEBSITE PROJECT</h3>
+                <h4>A fully responsive website that offers a comprehensive list of Student Login/Signup, Admissions, Fee details, Academic’s and Logout from the website and detailed information about the school.</h4>
+                <p>• Designed to provide the best user experience with HTML, Structure elements, and JavaScript Functions.</p>
+                <p>• The student data will directly store in database. In this project, I am using all HTML, CSS, JavaScript, Bootstrap, JSP, Servlet, MySQL.</p>
+            </div>
+            <!-- Project 2 -->
+            <div class="project-item">
+                <img src="project2.png" alt="Project 2">
+                <h3>HOME SELLING AND BUYING</h3>
+                <h4>A fully responsive website that offers a comprehensive list of HOME SELLING AND BUYING and detailed information about each Property.</h4>
+                <p>• Designed to provide the best user experience with HTML, Structure elements, and JavaScript Functions.</p>
+                <p>• Implemented property videos to give customers a clear view of the Property. In this project, I am using all HTML, CSS, JavaScript, Bootstrap.</p>
+            </div>
+            <!-- Add more projects as needed -->
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <h2>Contact Me</h2>
+        <div class="contact-container">
+            <p>If you'd like to work together or just say hi, feel free to reach out!</p>
+            <form class="contact-form">
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <textarea name="message" placeholder="Your Message" required></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Your Logo</div>
+            <div class="footer-links">
+                <a href="#home">Home</a>
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#contact">Contact</a>
+            </div>
+            <div class="footer-social">
+                <a href="https://www.linkedin.com/in/karimullah-syed-15b14129b/">LinkedIn</a>
+                <a href="https://github.com/Syed1121">GitHub</a>
+                <a href="https://x.com/KarimullahSyed5">Twitter</a>
+            </div>
+        </div>
+        <div class="footer-text">
+            <p>© 2024 Karimullah Syed. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
